@@ -1,0 +1,94 @@
+.todo-app {
+  max-width: 1024px;
+  margin: auto;
+  height: 100vh;
+}
+
+.content {
+  padding: 2rem;
+}
+
+.title p {
+  color: rgb(118, 109, 196);
+}
+
+/* ========== Input your Todo =========== */
+.todo-input {
+  margin: 2rem 0rem;
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+#input-todo {
+  padding: 1rem 1.5rem;
+  background-color: white;
+  width: 100%;
+}
+
+select,
+.btn-primary {
+  background-color: rgb(118, 109, 196);
+  padding: 1rem 1.5rem;
+  color: white;
+}
+
+/* ========== Todo List =========== */
+.todo-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.day {
+  text-transform: capitalize;
+}
+
+.todo-day-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.todo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: white;
+  padding: 0.75rem 1rem;
+}
+
+.todo p {
+  font-size: 12px;
+}
+
+@media only screen and (max-width: 767px) {
+  .todo-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  #input-todo {
+    grid-area: input-todo;
+    width: auto;
+  }
+  #select-day {
+    grid-area: select-day;
+  }
+  #btn-add {
+    grid-area: add;
+  }
+  .todo-input {
+    display: grid;
+    grid-template-areas:
+      "input-todo input-todo"
+      "select-day add";
+  }
+  select,
+  .btn-add,
+  #input-todo {
+    padding: 1rem;
+  }
+}
